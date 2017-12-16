@@ -12,6 +12,8 @@
 #include <tinyformat.h>
 #include <uint256.h>
 
+#include <hashdb.h>
+
 #include <vector>
 
 /**
@@ -416,9 +418,9 @@ public:
         block.nTime           = nTime;
         block.nBits           = nBits;
         block.nNonce          = nNonce;
-        return block.GetHash();
-    }
 
+        return phashdb->GetHash(block);
+    }
 
     std::string ToString() const
     {
