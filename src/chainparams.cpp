@@ -77,11 +77,11 @@ public:
         consensus.nSubsidyHalvingInterval = 500000;
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x000009f7e55e9e3b4781e22bd87a7cfa4acada9e4340d43ca738bf4e9fb8f5ce");
-        consensus.BIP65Height = 1206400;
-        consensus.BIP66Height = 1206400;
+        consensus.BIP65Height = 0;
+        consensus.BIP66Height = 0;
         consensus.powLimit = uint256S("0x3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
-        consensus.nPowTargetSpacing = 90;
+        consensus.nPowTargetTimespan = 80; // two weeks
+        consensus.nPowTargetSpacing = 20;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 13440; // 95%
@@ -114,11 +114,11 @@ public:
         pchMessageStart[0] = 0xda;
         pchMessageStart[1] = 0xa5;
         pchMessageStart[2] = 0xbe;
-        pchMessageStart[3] = 0xf9;
-        nDefaultPort = 9253;
+        pchMessageStart[3] = 0xf0;
+        nDefaultPort = 19253;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1415384723, 369858, 0x1e3fffff, 1, 250 * COIN);
+        genesis = CreateGenesisBlock(1519574400, 369858, 0x1e3fffff, 1, 512 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000009f7e55e9e3b4781e22bd87a7cfa4acada9e4340d43ca738bf4e9fb8f5ce"));
         assert(genesis.hashMerkleRoot == uint256S("0xa626e591b4583a9cdfa3f8c7ffa90628c745dc01b411825544209fce3bdba4d2"));
